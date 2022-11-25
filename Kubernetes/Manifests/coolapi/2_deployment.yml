@@ -12,21 +12,21 @@ spec:
     metadata:
       labels:
         app: "coolapi"
-    spec:
-      containers:
-        - name: "coolapi"
-          image: "acrvvm2022.azurecr.io/coolapi:1.0.0"
-          ports:
-          resources:
-            limits:
-              cpu: "1"
-            requests:
-              cpu: 500m
-            readinessProbe:
-              exec:
-            command:
-              - cat
-              - /tmp/healthy
-            initialDelaySeconds: 5
-            periodSeconds: 5
-         - containerPort: 3000
+  spec:
+    containers:
+      - name: "coolapi"
+        image: "acrvvm2022.azurecr.io/coolapi:1.0.0"
+        ports:
+        resources:
+          limits:
+            cpu: "1"
+          requests:
+            cpu: 500m
+          readinessProbe:
+            exec:
+          command:
+            - cat
+            - /tmp/healthy
+          initialDelaySeconds: 5
+          periodSeconds: 5
+       - containerPort: 3000
